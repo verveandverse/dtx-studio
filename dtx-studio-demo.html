@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DTX Studio Barbershop — Oak Cliff, Dallas | Fades, Lineups, Kids Cuts</title>
+<meta name="description" content="DTX Studio Barbershop in Oak Cliff, Dallas. 5.0-star rated fades, lineups, and kids cuts. Book online or walk in — 202 W Pembroke Ave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181c;
+    --ink-2:#1d2127;
+    --paper:#ede7da;
+    --paper-dim:#b9b2a3;
+    --pole-red:#c23b32;
+    --pole-blue:#39627f;
+    --line:rgba(237,231,218,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Work Sans',system-ui,sans-serif;
+    font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Alfa Slab One',serif;font-weight:400;letter-spacing:.01em}
+
+  /* Signature: barber pole ribbon */
+  .pole{
+    height:8px;width:100%;
+    background:repeating-linear-gradient(115deg,
+      var(--pole-red) 0 18px,
+      var(--paper) 18px 36px,
+      var(--pole-blue) 36px 54px,
+      var(--paper) 54px 72px);
+    background-size:144px 100%;
+    animation:pole 6s linear infinite;
+  }
+  @keyframes pole{to{background-position:144px 0}}
+  @media (prefers-reduced-motion:reduce){
+    .pole{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 0;gap:16px;
+  }
+  .wordmark{font-size:1.25rem;line-height:1;color:var(--paper);text-decoration:none}
+  .wordmark span{color:var(--pole-red)}
+  .head-right{display:flex;align-items:center;gap:14px}
+  .lang{
+    display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;
+  }
+  .lang button{
+    background:none;border:0;color:var(--paper-dim);
+    font:600 .78rem 'Work Sans',sans-serif;letter-spacing:.08em;
+    padding:7px 13px;cursor:pointer;
+  }
+  .lang button.active{background:var(--paper);color:var(--ink)}
+  .lang button:focus-visible,a:focus-visible,.btn:focus-visible{outline:2px solid var(--pole-red);outline-offset:2px}
+
+  .btn{
+    display:inline-block;text-decoration:none;border-radius:6px;
+    font-weight:700;letter-spacing:.02em;text-align:center;
+    padding:14px 26px;transition:transform .15s ease,background .15s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-red{background:var(--pole-red);color:var(--paper)}
+  .btn-red:hover{background:#d64a40}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--paper)}
+  .btn-small{padding:10px 18px;font-size:.9rem}
+
+  /* Hero */
+  .hero{padding:64px 0 72px;position:relative}
+  .stars{
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid var(--line);border-radius:999px;
+    padding:8px 16px;font-size:.86rem;font-weight:600;color:var(--paper-dim);
+    margin-bottom:28px;
+  }
+  .stars b{color:var(--paper)}
+  .stars .five{color:var(--pole-red);letter-spacing:.1em}
+  h1{
+    font-size:clamp(2.6rem,7.5vw,4.6rem);
+    line-height:1.04;text-transform:uppercase;
+    max-width:14ch;margin-bottom:22px;
+  }
+  h1 em{font-style:normal;color:var(--pole-red)}
+  .hero p{max-width:52ch;color:var(--paper-dim);margin-bottom:36px;font-size:1.06rem}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* Sections */
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .eyebrow{
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--pole-blue);margin-bottom:14px;
+  }
+  h2{font-size:clamp(1.6rem,4vw,2.3rem);text-transform:uppercase;margin-bottom:34px;line-height:1.15}
+
+  /* Services */
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .svc{background:var(--ink-2);padding:28px 24px}
+  .svc h3{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.05rem;margin-bottom:10px;text-transform:uppercase}
+  .svc p{color:var(--paper-dim);font-size:.95rem}
+  .menu-note{margin-top:22px;color:var(--paper-dim);font-size:.95rem}
+  .menu-note a{color:var(--paper);font-weight:600}
+
+  /* Reviews */
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .review{
+    background:var(--ink-2);border-left:4px solid var(--pole-red);
+    padding:26px 24px;font-size:1.02rem;
+  }
+  .review p{margin-bottom:14px}
+  .review footer{color:var(--paper-dim);font-size:.84rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .g-note{margin-top:20px;font-size:.85rem;color:var(--paper-dim)}
+
+  /* Visit */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media (max-width:720px){.visit{grid-template-columns:1fr}}
+  .hours{width:100%;border-collapse:collapse}
+  .hours td{padding:10px 0;border-bottom:1px solid var(--line);font-size:.98rem}
+  .hours td:last-child{text-align:right;color:var(--paper-dim)}
+  .hours tr.today td{color:var(--paper);font-weight:700}
+  .hours tr.today td:last-child{color:var(--pole-red)}
+  address{font-style:normal;color:var(--paper-dim);margin:18px 0 26px;line-height:1.8}
+  address a{color:var(--paper)}
+  .visit .btn{margin-right:10px;margin-bottom:10px}
+
+  /* Closing band */
+  .band{
+    text-align:center;padding:76px 24px;border-top:1px solid var(--line);
+    background:var(--ink-2);
+  }
+  .band h2{margin-bottom:14px}
+  .band p{color:var(--paper-dim);margin-bottom:30px}
+
+  /* Footer */
+  footer.site{
+    padding:34px 0;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:.82rem;color:var(--paper-dim);
+  }
+  footer.site a{color:var(--paper-dim)}
+</style>
+</head>
+<body>
+
+<div class="pole" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header>
+    <a class="wordmark display" href="#">DTX <span>STUDIO</span></a>
+    <div class="head-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+      <a class="btn btn-red btn-small" href="https://booksy.com/en-us/812109_dtx-studio_barber-shop_134786_dallas"
+         data-en="Book now" data-es="Reservar">Book now</a>
+    </div>
+  </header>
+
+  <section class="hero" style="border-top:0">
+    <div class="stars">
+      <span class="five" aria-hidden="true">★★★★★</span>
+      <span data-en="<b>5.0</b> on Google · 49 reviews" data-es="<b>5.0</b> en Google · 49 reseñas"><b>5.0</b> on Google · 49 reviews</span>
+    </div>
+    <h1 class="display" data-en="Clean fades.<br>Every chair.<br><em>Every time.</em>" data-es="Fades limpios.<br>Cada silla.<br><em>Cada vez.</em>">Clean fades.<br>Every chair.<br><em>Every time.</em></h1>
+    <p data-en="Oak Cliff's five-star barbershop on West Pembroke. Sharp fades, crispy lineups, and a clean, welcoming shop — patient with kids, serious about the details."
+       data-es="La barbería cinco estrellas de Oak Cliff en West Pembroke. Fades precisos, lineups impecables y un local limpio y acogedor — con paciencia para los niños y en serio con los detalles.">
+       Oak Cliff's five-star barbershop on West Pembroke. Sharp fades, crispy lineups, and a clean, welcoming shop — patient with kids, serious about the details.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-red" href="https://booksy.com/en-us/812109_dtx-studio_barber-shop_134786_dallas"
+         data-en="Book on Booksy" data-es="Reservar en Booksy">Book on Booksy</a>
+      <a class="btn btn-ghost" href="tel:+14692163451" data-en="Call (469) 216-3451" data-es="Llamar (469) 216-3451">Call (469) 216-3451</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="eyebrow" data-en="The work" data-es="El trabajo">The work</div>
+    <h2 class="display" data-en="What we do best" data-es="Lo que mejor hacemos">What we do best</h2>
+    <div class="services">
+      <div class="svc">
+        <h3 data-en="Haircuts &amp; Fades" data-es="Cortes y Fades">Haircuts &amp; Fades</h3>
+        <p data-en="Low, mid, high, taper — blended clean, exactly how you ask for it." data-es="Bajo, medio, alto, taper — difuminado limpio, exactamente como lo pidas.">Low, mid, high, taper — blended clean, exactly how you ask for it.</p>
+      </div>
+      <div class="svc">
+        <h3 data-en="Lineups &amp; Detail" data-es="Lineups y Detalle">Lineups &amp; Detail</h3>
+        <p data-en="Sharp edges, careful finishing — everything checked before you leave the chair." data-es="Líneas nítidas, acabado cuidadoso — todo revisado antes de dejar la silla.">Sharp edges, careful finishing — everything checked before you leave the chair.</p>
+      </div>
+      <div class="svc">
+        <h3 data-en="Kids Cuts" data-es="Cortes para Niños">Kids Cuts</h3>
+        <p data-en="Patient, professional, family-friendly. First cuts welcome." data-es="Con paciencia, profesional y familiar. Primeros cortes bienvenidos.">Patient, professional, family-friendly. First cuts welcome.</p>
+      </div>
+      <div class="svc">
+        <h3 data-en="Style &amp; Advice" data-es="Estilo y Consejo">Style &amp; Advice</h3>
+        <p data-en="Honest guidance on cuts and hair care, so it grows out the way you want." data-es="Consejo honesto sobre cortes y cuidado, para que crezca como tú quieres.">Honest guidance on cuts and hair care, so it grows out the way you want.</p>
+      </div>
+    </div>
+    <p class="menu-note"
+       data-en="Full service menu and prices are always current on our <a href='https://booksy.com/en-us/812109_dtx-studio_barber-shop_134786_dallas'>Booksy page</a>."
+       data-es="El menú completo de servicios y precios está siempre al día en nuestra <a href='https://booksy.com/en-us/812109_dtx-studio_barber-shop_134786_dallas'>página de Booksy</a>.">
+       Full service menu and prices are always current on our <a href="https://booksy.com/en-us/812109_dtx-studio_barber-shop_134786_dallas">Booksy page</a>.</p>
+  </section>
+
+  <section id="reviews">
+    <div class="eyebrow" data-en="Word on the street" data-es="Lo que se dice">Word on the street</div>
+    <h2 class="display" data-en="5.0 stars. Zero shortcuts." data-es="5.0 estrellas. Cero atajos.">5.0 stars. Zero shortcuts.</h2>
+    <div class="reviews">
+      <article class="review">
+        <p data-en="&ldquo;Always taking care of my fades — great price and great service.&rdquo;" data-es="&ldquo;Siempre cuidando mis fades — buen precio y gran servicio.&rdquo;">&ldquo;Always taking care of my fades — great price and great service.&rdquo;</p>
+        <footer data-en="Google review" data-es="Reseña de Google">Google review</footer>
+      </article>
+      <article class="review">
+        <p data-en="&ldquo;Walked in lookin' rough, walked out clean.&rdquo;" data-es="&ldquo;Entré hecho un desastre, salí impecable.&rdquo;">&ldquo;Walked in lookin' rough, walked out clean.&rdquo;</p>
+        <footer data-en="Google review" data-es="Reseña de Google">Google review</footer>
+      </article>
+      <article class="review">
+        <p data-en="&ldquo;Every cut is clean, detailed, and exactly how I ask for it.&rdquo;" data-es="&ldquo;Cada corte es limpio, detallado y exactamente como lo pido.&rdquo;">&ldquo;Every cut is clean, detailed, and exactly how I ask for it.&rdquo;</p>
+        <footer data-en="Google review" data-es="Reseña de Google">Google review</footer>
+      </article>
+    </div>
+    <p class="g-note" data-en="Excerpts from public Google reviews of DTX Studio Barbershop." data-es="Extractos de reseñas públicas de Google sobre DTX Studio Barbershop.">Excerpts from public Google reviews of DTX Studio Barbershop.</p>
+  </section>
+
+  <section id="visit">
+    <div class="eyebrow" data-en="Pull up" data-es="Pásate">Pull up</div>
+    <h2 class="display" data-en="Hours &amp; location" data-es="Horario y ubicación">Hours &amp; location</h2>
+    <div class="visit">
+      <div>
+        <table class="hours">
+          <tr><td data-en="Monday" data-es="Lunes">Monday</td><td data-en="Closed" data-es="Cerrado">Closed</td></tr>
+          <tr><td data-en="Tuesday" data-es="Martes">Tuesday</td><td>10:00 – 7:00</td></tr>
+          <tr><td data-en="Wednesday" data-es="Miércoles">Wednesday</td><td>10:00 – 7:00</td></tr>
+          <tr><td data-en="Thursday" data-es="Jueves">Thursday</td><td>10:00 – 7:00</td></tr>
+          <tr><td data-en="Friday" data-es="Viernes">Friday</td><td>10:00 – 7:00</td></tr>
+          <tr><td data-en="Saturday" data-es="Sábado">Saturday</td><td>9:00 – 7:00</td></tr>
+          <tr><td data-en="Sunday" data-es="Domingo">Sunday</td><td data-en="Closed" data-es="Cerrado">Closed</td></tr>
+        </table>
+      </div>
+      <div>
+        <address>
+          DTX Studio Barbershop<br>
+          202 W Pembroke Ave, Ste 300 Unit C<br>
+          Dallas, TX 75208 — Oak Cliff
+        </address>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=DTX+Studio+Barbershop+202+W+Pembroke+Ave+Dallas+TX&query_place_id=ChIJF6nOn7OZToYRFHsT_bjbjfQ"
+           data-en="Open in Maps" data-es="Abrir en Maps">Open in Maps</a>
+        <a class="btn btn-ghost" href="tel:+14692163451" data-en="Call the shop" data-es="Llamar al local">Call the shop</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="band">
+  <h2 class="display" data-en="Chair's open." data-es="La silla te espera.">Chair's open.</h2>
+  <p data-en="Book your spot in under a minute — walk-ins welcome when the chair is free." data-es="Reserva tu lugar en menos de un minuto — se aceptan walk-ins cuando la silla está libre.">Book your spot in under a minute — walk-ins welcome when the chair is free.</p>
+  <a class="btn btn-red" href="https://booksy.com/en-us/812109_dtx-studio_barber-shop_134786_dallas"
+     data-en="Book on Booksy" data-es="Reservar en Booksy">Book on Booksy</a>
+</div>
+
+<div class="wrap">
+  <footer class="site">
+    <span>© 2026 DTX Studio Barbershop · Oak Cliff, Dallas</span>
+    <span data-en="Demo site concept by <a href='https://verveandverse.com'>Verve &amp; Verse Studio</a>" data-es="Concepto de sitio demo por <a href='https://verveandverse.com'>Verve &amp; Verse Studio</a>">Demo site concept by <a href="https://verveandverse.com">Verve &amp; Verse Studio</a></span>
+  </footer>
+</div>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.getElementById('btn-es').classList.toggle('active', lang==='es');
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      el.innerHTML = el.getAttribute('data-' + lang);
+    });
+  }
+  // Highlight today's row in hours table
+  (function(){
+    var d = new Date().getDay(); // 0 Sun … 6 Sat
+    var order = [7,1,2,3,4,5,6]; // table rows: Mon..Sun
+    var rows = document.querySelectorAll('.hours tr');
+    var idx = (d === 0) ? 6 : d - 1;
+    if(rows[idx]) rows[idx].classList.add('today');
+  })();
+</script>
+</body>
+</html>
